@@ -1,0 +1,73 @@
+{
+  "name": "termtape",
+  "version": "0.1.0",
+  "description": "A flight recorder for your terminal: records every command plus its full output with cwd/git context, full-text searchable, auto-redacted, and exposed via an MCP server as memory for coding agents.",
+  "keywords": [
+    "terminal",
+    "history",
+    "pty",
+    "recorder",
+    "sqlite",
+    "fts5",
+    "mcp",
+    "model-context-protocol",
+    "agent",
+    "redaction",
+    "shell",
+    "cli"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "bin": {
+    "termtape": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "commander": "^14.0.0",
+    "zod": "^3.25.0"
+  },
+  "optionalDependencies": {
+    "node-pty": "^1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.15.0",
+    "eslint": "^10.6.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.63.0",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydenCJ/termtape.git"
+  },
+  "homepage": "https://github.com/JaydenCJ/termtape#readme",
+  "bugs": {
+    "url": "https://github.com/JaydenCJ/termtape/issues"
+  }
+}

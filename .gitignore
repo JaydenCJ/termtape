@@ -1,0 +1,30 @@
+# --- dependencies ---
+node_modules/
+
+# --- build outputs ---
+build/
+dist/
+out/
+.next/
+.turbo/
+
+# --- model weights & large artifacts (never commit) ---
+models/
+*.gguf
+*.onnx
+*.safetensors
+
+# --- env & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- caches / editor / OS ---
+.DS_Store
+.idea/
+.vscode/
+.cache/
+coverage/
+*.log
+tmp/
+*.tsbuildinfo
